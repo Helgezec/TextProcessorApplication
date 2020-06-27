@@ -12,7 +12,7 @@ namespace TextProcessorApplication
             using (var context = new Context())
             {
                 var dictionaryService = new DictionaryService(context);
-                if (args.Length < 2)
+                if (args.Length < 1)
                 {
                     while (true)
                     {
@@ -29,9 +29,9 @@ namespace TextProcessorApplication
                     }
                 }
 
-                else if (args.Length == 2)
+                else if (args.Length == 1)
                 {
-                    var command = $"{args[0]} {args[1]}";
+                    var command = args[0];
                     if (command == "создание словаря")
                     {
                         Console.WriteLine("Введите путь к файлу для создания словаря");
